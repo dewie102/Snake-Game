@@ -2,11 +2,7 @@
 #include <SFML/System.hpp>
 
 int main () {
-	sf::RenderWindow window (sf::VideoMode (200, 200), "SFML works!");
-	sf::RectangleShape shape (sf::Vector2f (100, 100));
-	shape.setOrigin (50, 50);
-	shape.setPosition (100, 100);
-	shape.setFillColor (sf::Color::Green);
+	sf::RenderWindow window;
 
 	while (window.isOpen ()) {
 		sf::Event event;
@@ -16,7 +12,7 @@ int main () {
 		}
 
 		window.clear ();
-		window.draw (shape);
+
 		window.display ();
 	}
 
