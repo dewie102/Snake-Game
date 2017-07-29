@@ -2,23 +2,30 @@
 #include "Gameboard.h"
 #include "Snake.h"
 #include "SharedContext.h"
-#include <string>
+#include "Window.h"
+#include <iostream>
 
 class GameManager {
 public:
-	GameManager (sf::Vector2u WindowSize, std::string WindowName);
+	GameManager ();
 	~GameManager ();
 
-	void Initialize ();
-	void EndGame ();
-	void Restart ();
+	void Update ();
+	void LateUpdate ();
+	void Render ();
+
+	sf::Time GetElapsed ();
+
+	Window* GetWindow ();
 
 private:
-	Gameboard board;
-	Snake snake;
-	sf::Vector2u windowSize;
-	std::string windowName;
+	sf::Clock m_clock;
+	sf::Time m_elapsed;
+	Gameboard m_board;
+	Snake m_snake;
+	SharedContext m_context;
+	Window m_window;
 
-	void CreateWindow (sf::Vector2u WindowSize, std::string WindowName);
+	void RestartClock ();
 };
 

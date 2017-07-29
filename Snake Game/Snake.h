@@ -13,8 +13,8 @@ public:
 	void DrawSnake ();
 
 private:
-	sf::Vector2i headPosition;
-	int size;
-	std::list<sf::Vector2i> body;
+	sf::Vector2i m_headPosition;
+	int m_size;
+	std::list<sf::Vector2i> m_body;
 };
 

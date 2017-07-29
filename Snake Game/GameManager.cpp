@@ -1,27 +1,35 @@
 #include "GameManager.h"
 
-GameManager::GameManager (sf::Vector2u WindowSize, std::string WindowName) {
-	windowSize = WindowSize;
-	windowName = WindowName;
-	Initialize ();
+GameManager::GameManager () : m_window("Snake", sf::Vector2u(800, 600)) {
+	m_clock.restart ();
+	srand ((unsigned int)time (nullptr));
+	m_context.m_wind = &m_window;
 }
 
-GameManager::~GameManager () {
-	
+GameManager::~GameManager () {}
+
+void GameManager::Update () {
+	m_window.Update ();
 }
 
-void GameManager::Initialize () {
-	CreateWindow (windowSize, windowName);
-}
-
-void GameManager::EndGame () {
-
-}
-
-void GameManager::Restart () {
+void GameManager::LateUpdate () {
 
 }
 
-void GameManager::CreateWindow (sf::Vector2u WindowSize, std::string WindowName) {
-	m_wind->create(sf::VideoMode(WindowSize.x, WindowSize.y), WindowName);
+void GameManager::Render () {
+	m_window.BeginDraw ();
+	// Render here
+	m_window.EndDraw ();
+}
+
+sf::Time GameManager::GetElapsed () {
+	return m_clock.getElapsedTime ();
+}
+
+Window* GameManager::GetWindow () {
+	return &m_window;
+}
+
+void GameManager::RestartClock () {
+	m_elapsed = m_clock.restart ();
 }

@@ -152,12 +152,14 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Snake.cpp" />
     <ClCompile Include="SnakeGameMain.cpp" />
+    <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gameboard.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="SharedContext.h" />
     <ClInclude Include="Snake.h" />
+    <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

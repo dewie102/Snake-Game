@@ -1,8 +1,8 @@
 #pragma once
-#include "GameManager.h"
+#include "Window.h"
 
 struct SharedContext {
-	sf::RenderWindow* m_wind;
+	Window* m_wind;
 	Gameboard* m_gameBoard;
 
 	SharedContext () : m_wind (nullptr), m_gameBoard (nullptr) {}
