@@ -21,7 +21,6 @@ public:
 private:
 	sf::Clock m_clock;
 	sf::Time m_elapsed;
-	Gameboard m_board;
 	Snake m_snake;
 	SharedContext m_context;
 	Window m_window;

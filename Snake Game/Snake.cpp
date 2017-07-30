@@ -15,7 +15,3 @@ Snake::~Snake () {
 void Snake::AddSegment (sf::Vector2i Position) {
 	m_body.push_back (Position);
 }
-
-void Snake::DrawSnake () {
-	
-}

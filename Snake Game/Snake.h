@@ -10,8 +10,6 @@ public:
 
 	void AddSegment (sf::Vector2i Position);
 
-	void DrawSnake ();
-
 private:
 	sf::Vector2i m_headPosition;
 	int m_size;
